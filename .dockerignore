@@ -1,0 +1,6 @@
+.env.example
+.gitignore
+.infra
+eslint.config.mjs
+LICENSE
+README.md
