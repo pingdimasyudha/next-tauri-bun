@@ -1,0 +1,32 @@
+namespace: ""
+
+configmap:
+  name: ""
+  labels:
+    app: ""
+  data:
+    NEXT_HOST: ""
+
+deployment:
+  name: ""
+  labels:
+    app: ""
+  replicas: 3
+  containerName: ""
+  image: ""
+
+hpa:
+  name: ""
+  labels:
+    app: ""
+  minReplicas: 1
+  maxReplicas: 5
+  cpuTargetAverageUtilization: 80
+
+service:
+  name: ""
+  labels:
+    app: ""
+  port: 3000
+  type: ""
+  loadBalancerIP: ""

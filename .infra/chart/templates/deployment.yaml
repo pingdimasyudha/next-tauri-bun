@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.deployment.labels.app }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.labels.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.labels.app }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.containerName | quote }}
+        image: {{ .Values.deployment.image | quote }}
+        env:
+        - name: NEXT_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Values.configmap.name }}
+              key: NEXT_HOST

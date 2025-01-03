@@ -1,0 +1,4 @@
+apiVersion: v2
+name: nayud-client
+description: ""
+version: 1.0.0
