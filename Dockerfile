@@ -1,5 +1,5 @@
-# 1.1.42-alpine
-FROM oven/bun@sha256:fa47bde9713df05cac86c013abbf1965a348f9de80a73c025a72510ef802d4d3 AS builder
+# 1.2.0-alpine
+FROM oven/bun@sha256:f857945c180d6f3dca180961ff2753c1f0b372ccb7b04af4257c2243b7e8201e AS builder
 RUN addgroup -g 10001 \
              -S nonroot \
     && adduser -G nonroot \
@@ -14,15 +14,14 @@ ARG TINI_CHECKSUM=c5b0666b4cb676901f90dfcb37106783c5fe2077b04590973b885950611b30
 ADD --checksum=sha256:${TINI_CHECKSUM} \
     --chown=nonroot:nonroot https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-static /tini
 
-COPY --chown=nonroot:nonroot ./package.json ./bun.lockb ./
-RUN bun i --production \
-          --frozen-lockfile
+COPY --chown=nonroot:nonroot ./package.json ./bun.lock ./
+RUN bun i --frozen-lockfile
 
 COPY --chown=nonroot:nonroot . .
 RUN bun build:web
 
-# 1.1.42-distroless
-FROM oven/bun@sha256:bf85edcaa2195ff152d1fe897b95c90b067e42ce10ad67677af94e576cab6781
+# 1.1.45-distroless
+FROM oven/bun@sha256:994252d8978f7fb4f12fb123c30d4405a46addc679f2cf1836d47f7350ce21b2
 USER nonroot:nonroot
 WORKDIR /home/nonroot
 
