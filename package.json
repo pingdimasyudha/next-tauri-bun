@@ -1,0 +1,39 @@
+{
+  "name": "nayud",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "Dimas Yudha Pratama",
+    "email": "dimasyudha@nayud.com",
+    "url": "https://nayud.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pingdimasyudha/next-tailwind-tauri-bun.git"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "eslint": "next lint",
+    "start": "next dev --turbopack"
+  },
+  "dependencies": {
+    "next": "15.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.2.0",
+    "@tailwindcss/postcss": "4.0.1",
+    "@types/eslint__eslintrc": "2.1.2",
+    "@types/node": "22.12.0",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "eslint": "9.19.0",
+    "eslint-config-next": "15.1.6",
+    "postcss": "8.5.1",
+    "tailwindcss": "4.0.1",
+    "typescript": "5.7.3"
+  }
+}
