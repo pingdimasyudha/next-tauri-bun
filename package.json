@@ -14,11 +14,28 @@
   },
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next telemetry disable && next build",
+    "build:android": "tauri android build",
+    "build:desktop": "tauri build",
+    "build:ios": "tauri ios build",
+    "build:ios-release": "tauri ios build --export-method app-store-connect",
+    "build:mac-release": "tauri build --bundles app --target universal-apple-darwin",
+    "build:win-amd64": "tauri build --runner cargo-xwin --target x86_64-pc-windows-msvc",
+    "build:win-arm64": "tauri build --runner cargo-xwin --target aarch64-pc-windows-msvc",
+    "clean": "rm -rf .next build out src-tauri/{gen,target}",
     "eslint": "next lint",
-    "start": "next dev --turbopack"
+    "init:android": "tauri android init",
+    "init:ios": "tauri ios init",
+    "start": "next dev --turbopack",
+    "start:android": "tauri android dev",
+    "start:desktop": "tauri dev",
+    "start:ios": "tauri ios dev"
   },
   "dependencies": {
+    "@tauri-apps/api": "2.2.0",
+    "@tauri-apps/plugin-notification": "2.2.1",
+    "@tauri-apps/plugin-os": "2.2.0",
+    "@tauri-apps/plugin-upload": "2.2.1",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"
@@ -26,6 +43,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.2.0",
     "@tailwindcss/postcss": "4.0.1",
+    "@tauri-apps/cli": "2.2.7",
     "@types/eslint__eslintrc": "2.1.2",
     "@types/node": "22.12.0",
     "@types/react": "19.0.8",
@@ -33,6 +51,7 @@
     "eslint": "9.19.0",
     "eslint-config-next": "15.1.6",
     "postcss": "8.5.1",
+    "postcss-load-config": "6.0.1",
     "tailwindcss": "4.0.1",
     "typescript": "5.7.3"
   }
