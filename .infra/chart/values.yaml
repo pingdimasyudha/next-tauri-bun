@@ -1,0 +1,28 @@
+namespace: nayud
+app:
+  name: nayud-web
+
+configMap:
+  name: nayud-web-config
+  data:
+    NEXT_HOST: http://localhost:3000
+
+deployment:
+  replicas: 3
+  container:
+    name: nayud-web
+    image: nayud/web
+
+hpa:
+  name: nayud-web-hpa
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilization: 80
+
+service:
+  name: nayud-web-service
+  protocol: TCP
+  port: 3000
+  targetPort: 3000
+  type: LoadBalancer
+  loadBalancerIP: ""

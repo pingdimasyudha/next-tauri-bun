@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.app.name }}
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.container.name }}
+        image: {{ .Values.deployment.container.image }}:{{ .Chart.AppVersion }}
+        env:
+        {{- range $key, $value := .Values.configMap.data }}
+        - name: {{ $key }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: {{ $.Values.configMap.name }}
+        {{- end }}
