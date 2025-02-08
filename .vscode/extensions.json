@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    "hverlin.mise-vscode",
+    "jawandarajbir.react-vscode-extension-pack",
+    "bradlc.vscode-tailwindcss",
+    "oven.bun-vscode",
+    "tauri-apps.tauri-vscode",
+    "swellaby.rust-pack",
+    "vscjava.vscode-java-pack",
+    "richardwillis.vscode-gradle-extension-pack",
+    "sswg.swift-lang",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig",
+    "aaron-bond.better-comments",
+    "usernamehw.errorlens",
+    "SonarSource.sonarlint-vscode",
+    "gitguardian-secret-security.gitguardian",
+    "snyk-security.snyk-vulnerability-scanner",
+    "ms-azuretools.vscode-docker",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "HashiCorp.terraform",
+    "circleci.circleci"
+  ]
+}
