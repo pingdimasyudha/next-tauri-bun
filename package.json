@@ -32,6 +32,7 @@
     "start:ios": "tauri ios dev"
   },
   "dependencies": {
+    "@tanstack/react-query": "5.66.0",
     "@tauri-apps/api": "2.2.0",
     "@tauri-apps/plugin-notification": "2.2.1",
     "@tauri-apps/plugin-os": "2.2.0",
